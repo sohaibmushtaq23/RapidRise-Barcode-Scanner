@@ -1,7 +1,5 @@
 import type { Employee } from '@/stores/employeeStore'
 
-const API_BASE = 'https://192.168.100.13:8080' 
-
 export async function fetchEmployees(): Promise<Employee[]> {
   const response = await fetch(`/api/employees`)
   if (!response.ok) throw new Error('Failed to fetch employees')

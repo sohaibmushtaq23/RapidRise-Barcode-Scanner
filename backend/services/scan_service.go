@@ -33,3 +33,8 @@ func ProcessScanRequest(barcode string, userID int) (models.ScanResponse, error)
 	}
 	return models.ScanResponse{Success: success, Message: message}, nil
 }
+
+//Fatch scan history
+func GetTopScans() ([]models.ScanLog, error) {
+	return repository.GetScanHistory()
+}

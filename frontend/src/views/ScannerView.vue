@@ -47,6 +47,7 @@
       <v-snackbar
         v-model="snackbar"
         location="bottom"
+        :timeout="5000"
       >
       {{ snackbarText }}
       </v-snackbar>

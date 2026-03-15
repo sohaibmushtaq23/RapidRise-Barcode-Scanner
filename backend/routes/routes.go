@@ -21,6 +21,7 @@ func RegisterRoutes() http.Handler {
 		w.Write([]byte("server working"))
 	})
 	r.Get("/employees", handlers.GetEmployeesHandler)
+	r.Get("/history", handlers.GetScansHandler)
 	r.Post("/login", handlers.LoginHandler)
 
 	// Protected routes – apply AuthMiddleware only to these

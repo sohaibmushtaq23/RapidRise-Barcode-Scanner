@@ -51,7 +51,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	printEmbeddedFS(frontendFS)
+	// printEmbeddedFS(frontendFS)
 	
 	// Serve frontend – static files or SPA fallback
 	r.Handle("/*", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
@@ -127,15 +127,15 @@ func main() {
 	}
 }
 
-func printEmbeddedFS(fsys fs.FS) {
-	err := fs.WalkDir(fsys, ".", func(path string, d fs.DirEntry, err error) error {
-		if err != nil {
-			return err
-		}
-		log.Printf("Embedded: %s", path)
-		return nil
-	})
-	if err != nil {
-		log.Printf("Error walking embedded FS: %v", err)
-	}
-}
+// func printEmbeddedFS(fsys fs.FS) {
+// 	err := fs.WalkDir(fsys, ".", func(path string, d fs.DirEntry, err error) error {
+// 		if err != nil {
+// 			return err
+// 		}
+// 		log.Printf("Embedded: %s", path)
+// 		return nil
+// 	})
+// 	if err != nil {
+// 		log.Printf("Error walking embedded FS: %v", err)
+// 	}
+// }

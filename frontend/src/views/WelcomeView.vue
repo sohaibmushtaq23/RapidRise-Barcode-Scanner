@@ -40,7 +40,7 @@
                 <v-btn
                   block
                   size="x-large"
-                  color="primary"
+                  color="#25374b"
                   prepend-icon="mdi-barcode-scan"
                   @click="startScan"
                 >
@@ -54,8 +54,7 @@
                 <v-btn
                   block
                   size="x-large"
-                  color="secondary"
-                  variant="outlined"
+                  color="#25374b"
                   prepend-icon="mdi-history"
                   @click="openHistory"
                 >
@@ -69,7 +68,7 @@
           <v-divider></v-divider>
           <v-card-actions>
             <v-btn
-              color="red"
+              color="error"
               variant="elevated"
               block
               size="large"
