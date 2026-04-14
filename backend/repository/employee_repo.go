@@ -30,7 +30,7 @@ func GetEmployees() ([]models.Employee, error) {
 // Validate employee login
 func ValidateEmployeeLogin(employeeID int, password string) (bool, error) {
 	var hashedPassword string
-	err := config.DB.QueryRow("SELECT Password FROM TblEmployees WHERE EmployeeID=@p1", employeeID).Scan(&hashedPassword)
+	err := config.DB.QueryRow("SELECT PasswordHash FROM TblEmployees WHERE EmployeeID=@p1", employeeID).Scan(&hashedPassword)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return false, nil

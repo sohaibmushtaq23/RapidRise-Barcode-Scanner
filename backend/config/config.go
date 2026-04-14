@@ -26,15 +26,13 @@ func InitDB() error {
 }
 
 func GetConnectionString() string {
-	user := os.Getenv("DB_USER")
-	password := os.Getenv("DB_PASSWORD")
+	// user := os.Getenv("DB_USER")
+	// password := os.Getenv("DB_PASSWORD")
 	host := os.Getenv("DB_HOST")
 	database := os.Getenv("DB_NAME")
 
 	return fmt.Sprintf(
-		"sqlserver://%s:%s@%s?database=%s&TrustServerCertificate=true",
-		user,
-		password,
+		"sqlserver://%s?database=%s&trusted_connection=true",
 		host,
 		database,
 	)
